@@ -1,0 +1,15 @@
+C:\tcc\Nova pasta\TesteCME\TesteCME\bin\Debug\net7.0\TesteCME.exe
+C:\tcc\Nova pasta\TesteCME\TesteCME\bin\Debug\net7.0\TesteCME.deps.json
+C:\tcc\Nova pasta\TesteCME\TesteCME\bin\Debug\net7.0\TesteCME.runtimeconfig.json
+C:\tcc\Nova pasta\TesteCME\TesteCME\bin\Debug\net7.0\TesteCME.dll
+C:\tcc\Nova pasta\TesteCME\TesteCME\bin\Debug\net7.0\TesteCME.pdb
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.csproj.AssemblyReference.cache
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.GeneratedMSBuildEditorConfig.editorconfig
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.AssemblyInfoInputs.cache
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.AssemblyInfo.cs
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.csproj.CoreCompileInputs.cache
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.dll
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\refint\TesteCME.dll
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.pdb
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\TesteCME.genruntimeconfig.cache
+C:\tcc\Nova pasta\TesteCME\TesteCME\obj\Debug\net7.0\ref\TesteCME.dll
