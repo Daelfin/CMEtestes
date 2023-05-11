@@ -4,6 +4,14 @@ using System.Text;
 
 DateTime start = DateTime.Now;
 
+int h = Convert.ToInt32(args[0]);    // x do centro da elipse 300
+int k = Convert.ToInt32(args[1]);    // y do centro da elipse 400
+int rx = Convert.ToInt32(args[2]);       // raio maior da elipse 400
+int ry = Convert.ToInt32(args[3]);       // raio menor da elipse 150
+double degree = Convert.ToInt32(args[4]); // angulo de inclinação da elipse em graus 60
+int seed = Convert.ToInt32(args[5]);
+int frame = Convert.ToInt32(args[6]);
+
 FastNoiseLite noise = new();
 noise.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2S);
 
@@ -16,21 +24,14 @@ int index = 0;
 Float minValue = new(999);
 float maxValue = 0;
 
-Random random = new();
-noise.SetSeed(random.Next());
+noise.SetSeed(seed);
 noise.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2S);
 noise.SetFractalType(FastNoiseLite.FractalType.FBm);
 noise.SetFrequency(0.005f);
 noise.SetFractalOctaves(2);
 noise.SetFractalWeightedStrength(1f);
 
-int h = 300;    // x do centro da elipse
-int k = 400;    // y do centro da elipse
-int rx = 400;       // raio maior da elipse
-int ry = 150;       // raio menor da elipse
-double degree = 60; // angulo de inclinação da elipse em graus
 double radian = degree * Math.PI / 180; // conversao para radianos
-
 
 for (int y = 0; y < imgSize; y++)
 {
@@ -48,7 +49,7 @@ for (int y = 0; y < imgSize; y++)
 
         if (distance <= 1)
         {
-            valor = new Float((float)((((noise.GetNoise(x, y) + 1) / 2) * 280) /** (1 - distance)*/));
+            valor = new Float((float)((((noise.GetNoise(x, y, 20 * frame) + 1) / 2) * 280) /** (1 - distance)*/));
 
             if (valor.value < minValue.value)
                 minValue.value = valor.value;
@@ -73,9 +74,9 @@ File.WriteAllText("Teste.txt", sb.ToString());
 TimeSpan time = DateTime.Now - start;
 Console.WriteLine(time.TotalSeconds);
 
-string strCmdText;
-strCmdText = "/C python generateCME.py";
-System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+//string strCmdText;
+//strCmdText = "/C python generateCME.py";
+//System.Diagnostics.Process.Start("CMD.exe", strCmdText);
 
 class Float
 {
