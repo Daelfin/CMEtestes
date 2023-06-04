@@ -33,6 +33,14 @@ noise.SetFractalWeightedStrength(1f);
 
 double radian = degree * Math.PI / 180; // conversao para radianos
 
+/// ajustar o raio baseado no frame
+
+rx /= 10;
+rx += rx * frame;
+ry /= 10;
+ry += ry * frame;
+
+///
 for (int y = 0; y < imgSize; y++)
 {
     for (int x = 0; x < imgSize; x++)
@@ -63,16 +71,19 @@ for (int y = 0; y < imgSize; y++)
     }
 }
 
-File.WriteAllText("Teste.txt", "");
+string fileName = $"CMEFrame{frame}.txt";
+
+File.WriteAllText(fileName, "");
 StringBuilder sb = new();
 foreach (Float f in noiseData)
 {
     sb.Append(f.value.ToString().Replace(',', '.') + ",");
 }
 sb.Remove(sb.Length - 1, 1);
-File.WriteAllText("Teste.txt", sb.ToString());
+File.WriteAllText(fileName, sb.ToString());
 TimeSpan time = DateTime.Now - start;
 Console.WriteLine(time.TotalSeconds);
+Console.WriteLine($"min:{minValue} max:{maxValue}");
 
 //string strCmdText;
 //strCmdText = "/C python generateCME.py";
